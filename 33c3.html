@@ -45,7 +45,7 @@ body {
   font-size:18px;
 }
 </style>
-  <div class="countdown" style="width:180px;height:270px;cursor:pointer;" data-targetdate="2016-12-26T15:00Z" onclick="document.location.href='https://events.ccc.de/congress/2016/wiki/Main_Page';" title="Click to get teleported to the 33C3 chaos wiki ...">
+  <div class="countdown" style="width:180px;height:270px;cursor:pointer;" data-targetdate="2016-12-26T10:00Z" onclick="document.location.href='https://events.ccc.de/congress/2016/wiki/Main_Page';" title="Click to get teleported to the 33C3 chaos wiki ...">
   	<div class="countdownLine" style="margin-top:105px;">
     <div class="countdownElement"><span class="days">0</span><span class="foo">d </span></div>
     <div class="countdownElement"><span class="hours">0</span><span class="foo">h </span></div>
@@ -66,9 +66,22 @@ body {
 	hours = $('.hours'),
 	minutes = $('.minutes'),
 	seconds = $('.seconds'),
+	targetDateAsDate = new Date(countDown.data("targetdate")),
 	targetDate = new Date(countDown.data("targetdate")).getTime(),
 	timeDiffrence = {};
-	
+
+	var fmonthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October","November", "December"];
+
+	var fday = targetDateAsDate.getUTCDate();
+	var fmonthIndex = targetDateAsDate.getUTCMonth();
+	var fyear = targetDateAsDate.getUTCFullYear();
+	var fhours = targetDateAsDate.getUTCHours();
+	var fminutes = targetDateAsDate.getUTCMinutes();
+	fminutes = ("0000" + fminutes).slice(-2)
+	fhours = ("0000" + fhours).slice(-2)
+	$('.countdown').attr( 'title', 'Starts on '+fday + ' ' + fmonthNames[fmonthIndex] + ' ' + fyear + ', ' + fhours +':'+ fminutes + ' (UTC) - Click to get teleported to the 33C3 chaos wiki ...' );
+
+
 	function zeroFill( number, width ) {
 		width -= number.toString().length;
 		if ( width > 0 )
