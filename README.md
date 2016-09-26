@@ -9,7 +9,7 @@ Provides a 33c3 countdown banner in 180x270 to be integrated in Wordpress blogs 
 
 Example screenshot of the banner.
 
-![image](https://github.com/trailblazr/30c3-countdown-banner-180x270/raw/master/33c3_banner_example.png?raw=true)
+![image](https://github.com/trailblazr/33c3-countdown-banner-180x270/raw/master/33c3_banner_example.png?raw=true)
 
 ## Features
 
